@@ -1,0 +1,52 @@
+# Diretório criado pelo terraform init
+.terraform/
+
+# Arquivos de estado
+*.tfstate
+*.tfstate.*
+
+# Arquivos de variáveis locais
+terraform.tfvars
+*.auto.tfvars
+
+# Logs
+crash.log
+crash.*.log
+
+# Overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Plano salvo
+*.tfplan
+
+# Chaves SSH
+*.pem
+*.key
+
+# Variáveis de ambiente
+.env
+.env.*
+
+# Arquivos do VS Code (opcional)
+.vscode/
+
+
+# Terraform
+.terraform/
+.terraform.lock.hcl
+
+*.tfstate
+*.tfstate.*
+
+terraform.tfvars
+*.auto.tfvars
+
+crash.log
+
+*.tfplan
+
+.env
+.env.*
