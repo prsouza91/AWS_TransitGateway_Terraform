@@ -69,7 +69,7 @@ resource "aws_security_group" "sg_bastion" {
     cidr_blocks = ["177.74.230.93/32"]
   }
 
-ingress {
+  ingress {
     description = "ICMP"
     from_port   = -1
     to_port     = -1

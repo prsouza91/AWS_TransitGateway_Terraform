@@ -80,7 +80,7 @@ resource "aws_subnet" "net_bastion" {
 
 
 resource "aws_internet_gateway" "internet_gateway_bastion" {
-#  vpc_id = aws_vpc.vpc_bastion.id
+  #  vpc_id = aws_vpc.vpc_bastion.id
   tags = {
     Name = "internet_gateway_bastion"
   }
