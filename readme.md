@@ -65,11 +65,10 @@ As VPCs RJ e SP permanecem privadas e se comunicam através do Transit Gateway.
 ```text
 .
 ├── main.tf
-├── variables.tf
-├── outputs.tf
-├── provider.tf
-├── terraform.tfvars
-├── versions.tf
+├── compute.tf
+├── network.tf
+├── routes.tf
+├── security_groups.tf
 ├── README.md
 └── images/
 ```
@@ -80,28 +79,28 @@ As VPCs RJ e SP permanecem privadas e se comunicam através do Transit Gateway.
 
 ### VPC Bastion
 
-- VPC
-- Subnet Pública
-- Internet Gateway
-- Route Table
-- Security Group
-- EC2 Bastion
+- VPC (vpc_bastion) 10.100.0.0/16
+- Subnet Pública (net_bastion) 10.100.0.0/24
+- Internet Gateway (igw)
+- Route Table (rt_bastion)
+- Security Group (sg_bastion)
+- EC2 (server_bastion)
 
 ### VPC RJ
 
-- VPC
-- Subnet Privada
-- Route Table
-- Security Group
-- EC2 server_rj
+- VPC (vpc_rj) 10.1.0.0/16
+- Subnet Privada (net_rj) 10.1.0.0/24
+- Route Table (rt_rj)
+- Security Group (sg_rj)
+- EC2 (server_rj)
 
 ### VPC SP
 
-- VPC
-- Subnet Privada
-- Route Table
-- Security Group
-- EC2 server_sp
+- VPC (vpc_sp) 10.2.0.0/16
+- Subnet Privada (net_sp) 10.2.0.0/24
+- Route Table (rt_sp)
+- Security Group (sg_sp)
+- EC2 (server_sp)
 
 ### Conectividade
 
@@ -117,12 +116,14 @@ Inicialização do Terraform:
 
 ```bash
 terraform init
+terraform fmt
 ```
 
 Visualização do plano de execução:
 
 ```bash
 terraform plan
+terraform validate
 ```
 
 Criação da infraestrutura:
@@ -167,12 +168,30 @@ Os testes confirmaram que o roteamento através do AWS Transit Gateway estava fu
 
 Durante o laboratório foram registrados screenshots contendo:
 
-- Recursos provisionados na AWS
+- Recursos provisionados
+![Recursos](images/terraform_apply.png)
+
 - Transit Gateway
+![transitgateway](images/transit_gateway.png)
+
 - VPC Attachments
+![attachments](images/transitgateway_attached.png)
+
 - Route Tables
+![rt](images/route_tables.png)
+
+- Security groups
+![sg](images/security_groups.png)
+
+- Subnets 
+![snets](images/subnets.png)
+
 - Instâncias EC2
+![ec2](images/instances.png)
+
 - Testes de conectividade via ping entre as VPCs
+![ping](images/ping_instancias.png)
+
 
 Estas evidências comprovam o correto funcionamento da arquitetura implementada.
 
@@ -187,6 +206,10 @@ terraform destroy
 ```
 
 A remoção foi concluída com sucesso, garantindo que nenhum recurso permanecesse ativo na conta AWS, seguindo boas práticas de controle de custos.
+
+-Terraform destroy
+![ec2](images/terraform-destroy.png)
+
 
 ---
 
