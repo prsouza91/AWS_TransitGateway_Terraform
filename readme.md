@@ -1,6 +1,6 @@
 # AWS Transit Gateway com Terraform
 
-## 📋 Sobre o projeto
+## Sobre o projeto
 
 Este laboratório demonstra a criação de uma arquitetura de rede na AWS utilizando **Terraform** para provisionar toda a infraestrutura como código (Infrastructure as Code - IaC).
 
@@ -10,7 +10,7 @@ Todo o ambiente foi criado automaticamente através do comando `terraform apply`
 
 ---
 
-## 🏗 Arquitetura
+## Arquitetura
 
 ![Arquitetura](images/transitgateway.jpg)
 
@@ -47,7 +47,7 @@ As VPCs RJ e SP permanecem privadas e se comunicam através do Transit Gateway.
 
 ---
 
-## 🚀 Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - AWS
 - Terraform
@@ -60,7 +60,7 @@ As VPCs RJ e SP permanecem privadas e se comunicam através do Transit Gateway.
 
 ---
 
-## 📂 Estrutura do projeto
+## Estrutura do projeto
 
 ```text
 .
@@ -151,7 +151,7 @@ Após o provisionamento foram realizados diversos testes para validar o funciona
 
 ---
 
-## 🔍 Teste de conectividade
+## Teste de conectividade
 
 Foi realizado acesso SSH à instância **server_bastion**.
 
@@ -164,32 +164,40 @@ Os testes confirmaram que o roteamento através do AWS Transit Gateway estava fu
 
 ---
 
-## 📸 Evidências
+## Evidências
 
 Durante o laboratório foram registrados screenshots contendo:
 
 - Recursos provisionados
+
 ![Recursos](images/terraform_apply.png)
 
 - Transit Gateway
+
 ![transitgateway](images/transit_gateway.png)
 
 - VPC Attachments
+
 ![attachments](images/transitgateway_attached.png)
 
 - Route Tables
+
 ![rt](images/route_tables.png)
 
 - Security groups
+
 ![sg](images/security_groups.png)
 
 - Subnets 
+
 ![snets](images/subnets.png)
 
 - Instâncias EC2
+
 ![ec2](images/instances.png)
 
 - Testes de conectividade via ping entre as VPCs
+
 ![ping](images/ping_instancias.png)
 
 
@@ -197,7 +205,7 @@ Estas evidências comprovam o correto funcionamento da arquitetura implementada.
 
 ---
 
-## 🧹 Destruição da infraestrutura
+## Destruição da infraestrutura
 
 Após a validação do ambiente, toda a infraestrutura foi removida utilizando:
 
@@ -213,7 +221,7 @@ A remoção foi concluída com sucesso, garantindo que nenhum recurso permaneces
 
 ---
 
-## 📚 Conceitos praticados
+## Conceitos praticados
 
 - Infrastructure as Code (IaC)
 - Terraform
@@ -230,7 +238,7 @@ A remoção foi concluída com sucesso, garantindo que nenhum recurso permaneces
 
 ---
 
-## 🎯 Objetivos alcançados
+## Objetivos alcançados
 
 ✔ Provisionamento automatizado com Terraform
 
@@ -244,7 +252,7 @@ A remoção foi concluída com sucesso, garantindo que nenhum recurso permaneces
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 **Paulo Ricardo de Souza**
 
